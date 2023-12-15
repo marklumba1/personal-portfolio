@@ -1,5 +1,6 @@
 import user from "../mark";
 import Header from "../components/header/Header";
+import Main from "../components/main/Main";
 const Home: React.FC = () => {
   const { name, tagLine, position, nav, socials } = user;
   return (
@@ -12,7 +13,7 @@ const Home: React.FC = () => {
           nav={nav}
           socials={socials}
         />
-        <div className="pt-24 lg:w-1/2 lg:py-24"></div>
+        <Main />
       </div>
     </div>
   );
