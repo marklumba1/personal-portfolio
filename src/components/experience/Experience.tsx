@@ -1,6 +1,7 @@
 interface ExperienceInterface {
   date: string;
   company: string;
+  companyLink: string;
   position: string;
   description: string;
   techs: string[];
@@ -9,6 +10,7 @@ interface ExperienceInterface {
 const Experience: React.FC<ExperienceInterface> = ({
   date,
   company,
+  companyLink,
   position,
   description,
   techs,
@@ -22,9 +24,14 @@ const Experience: React.FC<ExperienceInterface> = ({
       </p>
       <div className="z-10 flex flex-col gap-3 sm:col-span-6">
         <h3 className="font-medium leading-snug text-slate-200">
-          <p className="inline-flex items-baseline font-medium leading-tight text-slate-200 group-hover:text-teal-300 focus-visible:text-teal-300 text-base">
+          <a
+            href={companyLink}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex items-baseline font-medium leading-tight text-slate-200 group-hover:text-teal-300 focus-visible:text-teal-300 text-base"
+          >
             {company}
-          </p>
+          </a>
           <p className="text-slate-500 mt-2">{position}</p>
         </h3>
         <p>{description}</p>

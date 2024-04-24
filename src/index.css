@@ -2,6 +2,21 @@
 @tailwind components;
 @tailwind utilities;
 
+html {
+  scroll-behavior: smooth;
+}
 body {
   @apply bg-slate-900 leading-relaxed text-slate-400 antialiased;
+}
+
+b {
+  color: white;
+}
+
+h1 {
+  @apply text-4xl font-bold tracking-tight text-slate-200 sm:text-5xl;
+}
+
+h2 {
+  @apply text-lg font-medium tracking-tight text-slate-200 sm:text-xl;
 }

@@ -7,7 +7,7 @@ const Main: React.FC = () => {
     <main className="pt-24 lg:w-1/2 lg:py-24">
       <Section title="about">
         <p className="mb-4">
-          My name is Mark, and I like to work with JavaScript. My web
+          My name is <b>Mark</b>, and I like to work with JavaScript. My web
           programming adventure began in college, when I took my first coding
           classes, which taught me the fundamentals of web development.
         </p>
@@ -22,7 +22,7 @@ const Main: React.FC = () => {
 
       <Section title="experience">
         <div className="flex flex-col gap-6">
-          {experiences.map((experience, index) => (
+          {experiences.reverse().map((experience, index) => (
             <Experience key={index} {...experience} />
           ))}
         </div>
