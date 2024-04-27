@@ -1,8 +1,10 @@
 import Section from "../section/Section";
 import user from "../../mark";
-import Experience from "../experience/Experience";
+import List from "../list/List";
+
 const Main: React.FC = () => {
   const { experiences } = user;
+
   return (
     <main className="pt-24 lg:w-1/2 lg:py-24">
       <Section title="about">
@@ -21,11 +23,7 @@ const Main: React.FC = () => {
       </Section>
 
       <Section title="experience">
-        <div className="flex flex-col gap-6">
-          {experiences.reverse().map((experience, index) => (
-            <Experience key={index} {...experience} />
-          ))}
-        </div>
+        <List data={experiences} component={"exp"} />
       </Section>
     </main>
   );

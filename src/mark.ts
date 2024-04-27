@@ -1,4 +1,4 @@
-import { FaGithub, FaFacebook, FaInstagram, FaLinkedin } from "react-icons/fa";
+import { FaGithub, FaFacebook, FaLinkedin } from "react-icons/fa";
 
 const user = {
   name: "Mark O. Lumba",
