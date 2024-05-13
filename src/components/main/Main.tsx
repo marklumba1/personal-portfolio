@@ -1,9 +1,10 @@
 import Section from "../section/Section";
 import user from "../../mark";
 import List from "../list/List";
+import Link from "../link/Link";
 
 const Main: React.FC = () => {
-  const { experiences } = user;
+  const { experiences, projects } = user;
 
   return (
     <main className="pt-24 lg:w-1/2 lg:py-24">
@@ -23,8 +24,23 @@ const Main: React.FC = () => {
       </Section>
 
       <Section title="experience">
-        <List data={experiences} component={"exp"} />
+        <List data={experiences} component="exp" />
+        <Link text={"View Full Resume"} link={`google.com`} className="mt-8" />
       </Section>
+
+      <Section title="projects">
+        <List data={projects} component="proj" />
+      </Section>
+
+      <footer>
+        <div className="flex flex-col items-start md:items-center text-xs md:text-sm opacity-80">
+          <p>Built by Mark Lumba 2024 </p>
+          <p>
+            Designed Inspiration from{" "}
+            <a href="https://brittanychiang.com/">Brittany Chiang</a>
+          </p>
+        </div>
+      </footer>
     </main>
   );
 };

@@ -1,12 +1,6 @@
 import Link from "../link/Link";
-
-export interface ListItemInterface {
-  rightItem: string;
-  title: string;
-  link: string;
-  subTitle: string;
-  description: string;
-  badges: string[];
+import { Data } from "./List";
+interface ListItemInterface extends Data {
   elementId: number;
 }
 
@@ -29,13 +23,13 @@ const ListItem: React.FC<ListItemInterface> = ({
       <p className="z-10 mb-2 mt-1 text-xs font-semibold uppercase tracking-wide text-slate-500 sm:col-span-2">
         {rightItem}
       </p>
-      <div className="z-10 flex flex-col gap-3 sm:col-span-6">
+      <div className="z-10 flex flex-col gap-1 sm:col-span-6">
         <h3 className="font-medium leading-snug text-slate-200">
           <Link text={title} link={link} />
-          <p className="text-slate-500 mt-2">{subTitle}</p>
+          {subTitle && <p className="text-slate-500 mt-2">{subTitle}</p>}
         </h3>
         <p>{description}</p>
-        <div className="flex flex-wrap gap-3">
+        <div className="flex flex-wrap gap-3 mt-1">
           {badges.map((tech, index) => (
             <p
               key={index}
